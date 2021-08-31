@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Proyectos VS\\FerreteriaNetCore\\FerreteriaNetCore\\FerreteriaNetCore.csproj": {}
+    "D:\\Proyectos VS\\Ferreteria_G1\\FerreteriaNetCore\\FerreteriaNetCore\\FerreteriaNetCore.csproj": {}
   },
   "projects": {
-    "D:\\Proyectos VS\\FerreteriaNetCore\\FerreteriaNetCore\\FerreteriaNetCore.csproj": {
+    "D:\\Proyectos VS\\Ferreteria_G1\\FerreteriaNetCore\\FerreteriaNetCore\\FerreteriaNetCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos VS\\FerreteriaNetCore\\FerreteriaNetCore\\FerreteriaNetCore.csproj",
+        "projectUniqueName": "D:\\Proyectos VS\\Ferreteria_G1\\FerreteriaNetCore\\FerreteriaNetCore\\FerreteriaNetCore.csproj",
         "projectName": "FerreteriaNetCore",
-        "projectPath": "D:\\Proyectos VS\\FerreteriaNetCore\\FerreteriaNetCore\\FerreteriaNetCore.csproj",
+        "projectPath": "D:\\Proyectos VS\\Ferreteria_G1\\FerreteriaNetCore\\FerreteriaNetCore\\FerreteriaNetCore.csproj",
         "packagesPath": "C:\\Users\\Ch_Fa\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos VS\\FerreteriaNetCore\\FerreteriaNetCore\\obj\\",
+        "outputPath": "D:\\Proyectos VS\\Ferreteria_G1\\FerreteriaNetCore\\FerreteriaNetCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
