@@ -5,9 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\DTOs\NewFolder\" />
+    <None Remove="Models\DTOs\ResponseDTO\" />
   </ItemGroup>
-
   <ItemGroup>
     <None Include="wwwroot\js\site.js" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
@@ -37,4 +36,7 @@
     <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\DTOs\ResponseDTO\" />
+  </ItemGroup>
 </Project>

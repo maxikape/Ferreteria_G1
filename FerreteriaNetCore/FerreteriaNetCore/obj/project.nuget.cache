@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vpkz8ASaGLedyO+pzdxmFNsA2Gh8qOyU/HAw3Edz6kBHuNXmSyUBu20OqB66gMzHGuIc0ZARDLMAKis8+rq2Cg==",
+  "dgSpecHash": "dEDLHBZGzPjsymGnSwoBET30NOlIbbeKm+LA96jDjvS9w091RjCJO7cr6GFsT2+yGE1b2jkE+lS52TDgi0VUrg==",
   "success": true,
-  "projectFilePath": "D:\\Proyectos VS\\Ferreteria_G1\\FerreteriaNetCore\\FerreteriaNetCore\\FerreteriaNetCore.csproj",
+  "projectFilePath": "/Users/dcarron/facu/Ferreteria_G1/FerreteriaNetCore/FerreteriaNetCore/FerreteriaNetCore.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
