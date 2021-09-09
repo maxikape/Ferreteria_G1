@@ -6,6 +6,9 @@
 
   <ItemGroup>
     <None Remove="Models\DTOs\ResponseDTO\" />
+    <None Remove="DAO\" />
+    <None Remove="DAO\MockUp\" />
+    <None Remove="DAO\NHibernet\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\js\site.js" />
@@ -38,5 +41,8 @@
 
   <ItemGroup>
     <Folder Include="Models\DTOs\ResponseDTO\" />
+    <Folder Include="DAO\" />
+    <Folder Include="DAO\MockUp\" />
+    <Folder Include="DAO\NHibernet\" />
   </ItemGroup>
 </Project>

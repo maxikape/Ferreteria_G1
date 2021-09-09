@@ -11,11 +11,11 @@
  
 
 <div class="wrapper">
-    <form class="login">
+    <form class="login" method="post" action="@Url.Content("~/Home/Login")">
         <p class="title">Log in</p>
-        <input type="text" placeholder="Username" autofocus />
+        <input type="text" placeholder="Username" name="userName" autofocus />
         <i class="fa fa-user"></i>
-        <input type="password" placeholder="Password" />
+        <input type="password" placeholder="Password" name="password" />
         <i class="fa fa-key"></i>
         <a href="@Url.Content("~/Home/PasswordRecovery")">Forgot your password?</a>
         <a href="@Url.Content("~/Home/Signup")">Don't have an account?</a>

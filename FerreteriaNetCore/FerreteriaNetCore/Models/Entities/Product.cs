@@ -1,5 +1,4 @@
-﻿using System;
-namespace proyectoFerreteria.Models
+﻿namespace FerreteriaNetCore.Models.Entities
 {
     public class ProductsModel
     {
