@@ -3,8 +3,6 @@ namespace proyectoFerreteria.Models
 {
     public class ProductsModel
     {
-        public ProductsModel()
-        {
-        }
+        //TODO: define properties 
     }
 }

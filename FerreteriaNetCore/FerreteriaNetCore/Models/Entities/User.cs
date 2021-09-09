@@ -3,12 +3,12 @@ namespace proyectoFerreteria.Models
 {
     public class UserModel
     {
-        private string username { get; set; }
+        public string Username { get; set; }
 
-        private string password { get; set; }
+        public string Password { get; set; }
 
-        private string email { get; set; }
+        public string Email { get; set; }
 
-        private string bithdate { get; set; }
+        public string Bithdate { get; set; }
     }
 }

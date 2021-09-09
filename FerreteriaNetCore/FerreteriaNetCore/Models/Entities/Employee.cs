@@ -3,19 +3,19 @@ namespace proyectoFerreteria.Models
 {
     public class EmployeeModel
     {
-        private int id { get; set; }
+        public int Id { get; set; }
 
-        private string name { get; set; }
+        public string Name { get; set; }
 
-        private string surname { get; set; }
+        public string Surname { get; set; }
 
-        private string file { get; set; }
+        public string File { get; set; }
 
-        private string category { get; set; }
+        public string Category { get; set; }
 
-        private string dniNumber { get; set; }
+        public string DniNumber { get; set; }
 
-        private string dniType { get; set; }
+        public string DniType { get; set; }
         
     }
 }
