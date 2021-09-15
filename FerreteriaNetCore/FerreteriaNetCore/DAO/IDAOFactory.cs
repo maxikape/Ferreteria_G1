@@ -23,5 +23,7 @@ namespace FerreteriaNetCore.DAO
         }
 
         public abstract IUserDAO UserDAO { get; }
+
+        public abstract IProductDAO ProductDAO { get; }
     }
 }
