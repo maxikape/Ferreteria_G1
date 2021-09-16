@@ -3,10 +3,7 @@ using FerreteriaNetCore.DAO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace FerreteriaNetCore.Controllers
 {
@@ -44,7 +41,7 @@ namespace FerreteriaNetCore.Controllers
             return View("~/Views/Home/ProductSearch.cshtml");
         }
 
-        public IActionResult Login(String userName, String password)
+        /*public IActionResult Login(String userName, String password)
         {
             IDAOFactory factory = IDAOFactory.Create();
             IUserDAO userDAO = factory.UserDAO;
@@ -54,7 +51,7 @@ namespace FerreteriaNetCore.Controllers
             }
 
             return RedirectToAction("Index", "Home");
-        }
+        }*/
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

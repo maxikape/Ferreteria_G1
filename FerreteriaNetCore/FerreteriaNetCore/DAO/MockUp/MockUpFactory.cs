@@ -2,8 +2,8 @@
 {
     public class MockUpFactory : IDAOFactory
     {
-        public override IUserDAO UserDAO { get; }
+        public override IUserDAO UserDAO { get { return new UserMockUp(); } }
 
-        public override IProductDAO ProductDAO { get; }
+        public override IProductDAO ProductDAO { get { return new ProductMockUp(); } }
     }
 }

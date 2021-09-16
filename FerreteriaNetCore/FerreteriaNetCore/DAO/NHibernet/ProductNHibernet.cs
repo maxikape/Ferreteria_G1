@@ -3,7 +3,7 @@ using FerreteriaNetCore.Models.Entities;
 
 namespace FerreteriaNetCore.DAO.NHibernet
 {
-    public class ProductNHibernet
+    public class ProductNHibernet : IProductDAO
     {
         public ProductsModel FindProduct(int quantity)
         {

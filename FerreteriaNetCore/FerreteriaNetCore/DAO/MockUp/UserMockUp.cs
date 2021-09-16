@@ -12,7 +12,10 @@ namespace FerreteriaNetCore.DAO.MockUp
 
         public UserModel FindUser(string userName, string password)
         {
-            return new UserModel { Username = "Facundo", Password = "1234" };
+            if (password == "1234" && userName == "Facundo") { 
+                return new UserModel { Username = "Facundo", Password = "1234" };
+            }
+            return null;
         }
 
         public UserModel FindUser(long id)

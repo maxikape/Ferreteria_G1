@@ -1,5 +1,6 @@
 ﻿using System;
-namespace proyectoFerreteria.Models.DTOs
+
+namespace FerreteriaNetCore.Models.DTOs.RequestsDTO
 {
     public class LoginDTO
     {
