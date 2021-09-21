@@ -1,0 +1,97 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background: url("https://i.pinimg.com/originals/1f/fc/27/1ffc2732fd1f4a03802051f0f38cd7dd.jpg");
+        
+}
+/* div, caja de login */
+.login_box{
+    width: 320px;
+    height: 550px;
+    background:#000;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    /* box-sizing: border-box; */
+    padding: 65px 30px;
+}
+
+.login_box .logo{
+ border-radius: 50px;
+ width: 100px;
+ height: 100px;
+ position: absolute;
+ top: -50px;
+ left: calc(50% - 50px);
+}
+
+.login_box h1{
+    margin: 0px;
+    padding: 0 0 20px;
+    
+    text-align: center;
+    font-size: 25px;    
+}
+
+.login_box label{
+    padding: 0px;
+    margin: 0px;
+    font-weight: bold;
+    display: block;
+}
+
+.login_box input{
+    width: 100%;
+    margin-bottom:20px ;
+}
+
+/* input, cajas de texto */
+.login_box select{
+border: none;
+border-bottom: 1px solid #fff;
+background: transparent;
+outline: none;
+height: 40px;
+color: orangered;
+font-size: 16px;
+margin-bottom: 20px;
+}
+
+.login_box input[type="number"],
+.login_box input[type="text"],
+.login_box input[type="password"] {
+border: none;
+border-bottom: 1px solid #fff;
+background: transparent;
+outline: none;
+height: 40px;
+color: #fff;
+font-size: 16px;
+}
+
+.login_box input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 30px;
+    margin-top: 5px;
+    background: orangered;
+    
+}
+
+a{
+    color: white;
+}
+   
+/*button{
+    border-radius: 5px;
+    
+    width: 100px;
+    height: 40px;
+    /* margin: 0 auto; */
+  /*  background-color: yellow;
+    
+    margin: 0 ;  
+    border: 1px solid ;    
+}*/
