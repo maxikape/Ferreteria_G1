@@ -1,41 +1,8 @@
-﻿@{ ViewData["Title"] = "Home Page"; }
+﻿@{ ViewData["Title"] = "Home Page";
 
-<!--
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
--->
-<!--
-<div class="wrapper">
-    <form class="login" method="post" action="@Url.Content("~/Login/Login")" >
-        <p class="title">Log in</p>
-        <input type="text" placeholder="Username" name="userName" autofocus />
-        <i class="fa fa-user"></i>
-        <input type="password" placeholder="Password" name="password" />
-        <i class="fa fa-key"></i>
-        <a href="@Url.Content("~/Home/PasswordRecovery")">Forgot your password?</a>
-        <a href="@Url.Content("~/Home/Signup")">Don't have an account?</a>
-        <button>
-            <i class="spinner"></i>
-            <span class="state">Log in</span>
-        </button>
-    </form>
-    <footer><a target="blank" href="http://boudra.me/">boudra.me</a></footer>
+    Layout = "_LayoutLogin";
 
-</div>
--->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-    <title>Login</title>
-
-    <link rel="stylesheet" href="~/css/loginn.css">
-
-</head>
-<body>
+  }
 
 
     <form class="login_box" method="post" action="@Url.Content("~/Home/Login")">
@@ -43,39 +10,16 @@
         <h1>Login</h1>
 
         <div>
-            <label>Rol</label>
-            <Select name="Roles">
-                <option value="">Selecciona tu rol en la empresa</option>
-                <option value="1">Jefe</option>
-                <option value="2">Empleado</option>
-                <option value="3">Encargado de deposito</option>
-            </Select>
 
             <label for="">Ingrese su nombre</label>
             <input type="text" placeholder="Nombre">
 
-
-            <label for="">Ingrese su Apellido</label>
-            <input type="text" placeholder="Apellido">
-
-
-            <label>Dni</label>
-            <input type="number" placeholder="Dni">
-
-
             <label>Contraseña</label>
             <input type="password" placeholder="Contraseña">
 
-
-
             <input type="submit" value="Log in">
-
-
-
         </div>
     </form>
 
-    <a href=@Url.Content("~/Home/ProductEdit.cshtml")>ABM</a>
+    <a href="@Url.Content("~/Home/ProductEdit.cshtml")">ABM</a>
 
-</body>
-</html>
