@@ -1,16 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
 using FerreteriaNetCore.Models.Entities;
 
 namespace FerreteriaNetCore.DAO.NHibernet
 {
     public class ProductNHibernet : IProductDAO
     {
-        public ProductsModel FindProduct(int quantity)
+        public List<ProductsModel> FindAllProducts()
         {
             throw new NotImplementedException();
         }
 
-        public ProductsModel FindProduct(String brand)
+        public List<ProductsModel> FindProducts(int quantity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<ProductsModel> FindProducts(String brand)
         {
             throw new NotImplementedException();
         }

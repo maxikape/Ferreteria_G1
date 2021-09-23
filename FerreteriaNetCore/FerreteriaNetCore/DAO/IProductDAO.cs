@@ -1,13 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using FerreteriaNetCore.Models.Entities;
 
 namespace FerreteriaNetCore.DAO
 {
     public interface IProductDAO
     {
-        ProductsModel FindProduct(int quantity);
+        List<ProductsModel> FindAllProducts();
+        
+        List<ProductsModel> FindProducts(int quantity);
 
-        ProductsModel FindProduct(String brand);
+        List<ProductsModel> FindProducts(String brand);
 
         ProductsModel FindProduct(long id);
 
