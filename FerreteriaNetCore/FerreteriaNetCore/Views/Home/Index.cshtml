@@ -1,25 +1,28 @@
-﻿@{ ViewData["Title"] = "Home Page";
+﻿@{ ViewData["Title"] = "Login";
 
     Layout = "_LayoutLogin";
 
-  }
+}
 
 
-    <form class="login_box" method="post" action="@Url.Content("~/Home/Login")">
-        <img class="logo" src="~/icon/logo.jpg" alt="">
-        <h1>Login</h1>
 
-        <div>
+<form class="login_box" method="post" action="@Url.Content("~/Home/Login")">
+    <img class="logo" src="~/icon/logo.jpg" alt="">
+    <h1>Login</h1>
 
-            <label for="">Ingrese su nombre</label>
-            <input type="text" placeholder="Nombre">
+    <div>
 
-            <label>Contraseña</label>
-            <input type="password" placeholder="Contraseña">
+        <label for="">Ingrese su nombre</label>
+        <input type="text" placeholder="Nombre">
 
-            <input type="submit" value="Log in">
-        </div>
-    </form>
+        <label>Contraseña</label>
+        <input type="password" placeholder="Contraseña">
 
-    <a href="@Url.Content("~/Home/ProductEdit.cshtml")">ABM</a>
+        <input type="submit" value="Log in">
+    </div>
+</form>
+
+<a href="@Url.Content("~/Home/ProductEdit.cshtml")">ABM</a>
+
+
 

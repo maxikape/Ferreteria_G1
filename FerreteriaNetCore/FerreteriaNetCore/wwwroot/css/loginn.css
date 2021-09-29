@@ -1,13 +1,12 @@
-body{
+body {
     margin: 0px;
     padding: 0px;
-    background: url("https://i.pinimg.com/originals/1f/fc/27/1ffc2732fd1f4a03802051f0f38cd7dd.jpg");
-        
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfmjyfCpd7f1TWyZzkQhtSYOwagAWUAfI8UAyOgeQ7i0gvx08ThHXNl0OY2JqT2sHbfCE&usqp=CAU");
 }
 /* div, caja de login */
 .login_box{
-    width: 320px;
-    height: 550px;
+    width: auto;
+    height: auto;
     background:#000;
     color: #fff;
     top: 50%;
@@ -15,7 +14,7 @@ body{
     position: absolute;
     transform: translate(-50%, -50%);
     /* box-sizing: border-box; */
-    padding: 65px 30px;
+    padding: 65px 20px 20px 20px;
 }
 
 .login_box .logo{
@@ -75,7 +74,7 @@ font-size: 16px;
     border: none;
     outline: none;
     height: 30px;
-    margin-top: 5px;
+    margin-top: auto;
     background: orangered;
     
 }
