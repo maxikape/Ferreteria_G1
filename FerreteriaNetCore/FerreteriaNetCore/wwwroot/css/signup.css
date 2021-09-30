@@ -14,16 +14,16 @@ body {
     position: absolute;
     transform: translate(-50%, -50%);
     /* box-sizing: border-box; */
-    padding: 65px 20px 20px 20px;
+    padding: 5px 20px 20px 20px;
 }
 
 .login_box .logo{
  border-radius: 50px;
- width: 100px;
- height: 100px;
+ width: 80px;
+ height: 80px;
  position: absolute;
- top: -50px;
- left: calc(50% - 50px);
+ top: -45px;
+ left: calc(54% - 50px);
 }
 
 .login_box h1{
@@ -31,7 +31,7 @@ body {
     padding: 0 0 20px;
     
     text-align: center;
-    font-size: 25px;    
+    font-size: 15px;    
 }
 
 .login_box label{
