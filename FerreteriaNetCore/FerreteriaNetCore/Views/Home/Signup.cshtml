@@ -1,4 +1,41 @@
-﻿@{
-    ViewData["Title"] = "Signup";
+﻿@{ ViewData["Title"] = "Signup";
+
+    Layout = "_LayoutSignup";
 }
-<h1>@ViewData["Title"]</h1>
+
+
+    <form class="login_box" action="@Url.Content("~/Home/Signup")" method="post">
+        <img class="logo" src="/icon/logo.jpg" alt="">
+        <h1>Signup</h1>
+
+        <div style="text-align:center">
+            <h2>¡Bienvenido!</h2></div>
+        <br>
+
+        <div>
+            <label>Rol</label>
+            <Select name="Roles">
+                <option value="">Selecciona tu rol en la empresa</option>
+                <option value="1">Jefe</option>
+                <option value="2">Empleado</option>
+                <option value="3">Encargado de deposito</option>
+            </Select>
+
+            <label for="">User</label>
+            <input type="text" placeholder="Usuario">
+
+
+            <label>Password</label>
+            <input type="password" placeholder="Contraseña">
+
+            <label>Email</label>
+            <input type="email" placeholder="Email">
+
+
+            <input type="submit" value="Log in">
+
+
+
+        </div>
+    </form>
+

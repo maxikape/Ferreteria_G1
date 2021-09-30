@@ -40,7 +40,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\DTOs\ResponseDTO\" />
     <Folder Include="DAO\" />
     <Folder Include="DAO\MockUp\" />
     <Folder Include="DAO\NHibernet\" />
