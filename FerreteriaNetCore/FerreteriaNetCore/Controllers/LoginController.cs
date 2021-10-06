@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using FerreteriaNetCore.DAO;
 using FerreteriaNetCore.Models.DTOs.RequestsDTO;
+using FerreteriaNetCore.Models.Entities;
 
 namespace FerreteriaNetCore.Controllers
 {
@@ -16,14 +17,16 @@ namespace FerreteriaNetCore.Controllers
 
         public IActionResult Login(LoginDTO loginDTO)
         {
-            IDAOFactory factory = IDAOFactory.Create();
-            IUserDAO userDAO = factory.UserDAO;
-            if (userDAO.FindUser(loginDTO.Username, loginDTO.Password) != null)
-            {
-                return RedirectToAction("Search", "Home");
-            }
+            using(DAOFactory daoFactory = new DAOFactory()){
 
-            return RedirectToAction("Index", "Home");
+                UserModel user = daoFactory.UserDAO.GetUser(loginDTO.Username, loginDTO.Password);
+
+                if (user != null){
+                    return RedirectToAction("Search", "Home");
+                }
+
+                return RedirectToAction("Index", "Home");
+            }
         }
     }
 }

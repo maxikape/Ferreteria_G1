@@ -32,7 +32,7 @@ namespace FerreteriaNetCore.Controllers
             return View();
         }
 
-        public IActionResult ProductSearch()
+        public IActionResult Search()
         {
             return View("~/Views/Home/ProductSearch.cshtml");
         }
@@ -41,18 +41,6 @@ namespace FerreteriaNetCore.Controllers
         {
             return View();
         }
-
-        /*public IActionResult Login(String userName, String password)
-        {
-            IDAOFactory factory = IDAOFactory.Create();
-            IUserDAO userDAO = factory.UserDAO;
-            if (userDAO.FindUser(userName, password) != null)
-            {
-                return RedirectToAction("Search", "Home");
-            }
-
-            return RedirectToAction("Index", "Home");
-        }*/
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
