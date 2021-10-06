@@ -27,11 +27,6 @@ namespace FerreteriaNetCore.Controllers
             return View();
         }
 
-        public IActionResult Signup()
-        {
-            return View();
-        }
-
         public IActionResult Search()
         {
             return View("~/Views/Home/ProductSearch.cshtml");

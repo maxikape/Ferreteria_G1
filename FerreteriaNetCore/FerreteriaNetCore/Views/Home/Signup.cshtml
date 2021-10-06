@@ -4,7 +4,7 @@
 }
 
 
-<form class="login_box" action="@Url.Content("~/Home/Signup")" method="post">
+<form class="login_box" action="@Url.Content("~/Signup/Signup")" method="post">
               
         <style>
               .login_box {
@@ -31,6 +31,8 @@
       
         <div>
 
+            <!--TODO: no mostrar selección de rol, lo debe definir alguien con autoridad en la empresa no el creador de usuario-->
+            <!--
             <label>Rol</label>
             <Select name="Roles">
                 <option value="">Selecciona tu rol en la empresa</option>
@@ -38,20 +40,29 @@
                 <option value="2">Empleado</option>
                 <option value="3">Encargado de deposito</option>
             </Select>
+            -->
 
             <label for="">User</label>
-            <input type="text" placeholder="Usuario">
+            <input type="text" placeholder="Usuario" name="Username">
 
 
             <label>Password</label>
-            <input type="password" placeholder="Contraseña">
+            <input type="password" placeholder="Contraseña" name="Password">
 
             <label>Password again</label>
-            <input type="password" placeholder="Contraseña">
+            <input type="password" placeholder="Contraseña" name="PasswordConfirmation">
 
             <label>Email</label>
-            <input type="email" placeholder="Email">
+            <input type="email" placeholder="Email" name="Email">
 
+            <label>Fecha de nacimiento</label>
+            <input type="date" placeholder="dd/mm/YYYY" name="Birthdate">
+
+            <label for="">Nombre</label>
+            <input type="text" placeholder="Nombre" name="Firstname">
+
+            <label for="">Apellido</label>
+            <input type="text" placeholder="Apellido" name="Lastname">
 
             <input type="submit" value="Create User">
 
