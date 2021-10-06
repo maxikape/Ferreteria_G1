@@ -34,7 +34,7 @@ namespace FerreteriaNetCore.Controllers
 
         public IActionResult Search()
         {
-            return View();
+            return View("~/Views/Home/ProductSearch.cshtml");
         }
 
         public IActionResult ProductEdit()
