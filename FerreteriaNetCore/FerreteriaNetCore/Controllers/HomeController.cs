@@ -1,9 +1,9 @@
 ﻿using FerreteriaNetCore.Models;
-using FerreteriaNetCore.DAO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Diagnostics;
+using FerreteriaNetCore.Models.DTOs.ResponseDTO;
+using Microsoft.AspNetCore.Http;
 
 namespace FerreteriaNetCore.Controllers
 {
@@ -29,7 +29,14 @@ namespace FerreteriaNetCore.Controllers
 
         public IActionResult Search()
         {
-            return View("~/Views/Home/ProductSearch.cshtml");
+            UserResponse userResponse = HttpContext.Session.Get<UserResponse>("UsuarioLogueado");
+            if (userResponse != null)
+            {
+                return View("~/Views/Home/ProductSearch.cshtml");
+            }
+            else{
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         public IActionResult ProductEdit()

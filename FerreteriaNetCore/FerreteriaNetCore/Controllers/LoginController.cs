@@ -2,7 +2,9 @@
 using Microsoft.Extensions.Logging;
 using FerreteriaNetCore.DAO;
 using FerreteriaNetCore.Models.DTOs.RequestsDTO;
+using FerreteriaNetCore.Models.DTOs.ResponseDTO;
 using FerreteriaNetCore.Models.Entities;
+using Microsoft.AspNetCore.Http;
 
 namespace FerreteriaNetCore.Controllers
 {
@@ -22,6 +24,19 @@ namespace FerreteriaNetCore.Controllers
                 UserModel user = daoFactory.UserDAO.GetUser(loginDTO.Username, loginDTO.Password);
 
                 if (user != null){
+
+                    UserResponse userResponse = new UserResponse
+                    {
+                        UserName = user.Username
+
+                    };
+
+                    HttpContext.Session.Set<UserResponse>(
+                        "UsuarioLogueado",
+                        userResponse
+                    );
+
+
                     return RedirectToAction("Search", "Home");
                 }
 
