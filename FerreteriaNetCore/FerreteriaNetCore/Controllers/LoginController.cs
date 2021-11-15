@@ -38,9 +38,12 @@ namespace FerreteriaNetCore.Controllers
 
 
                     return RedirectToAction("Search", "Home");
-                }
 
-                return RedirectToAction("Index", "Home");
+                }else{
+
+                    return RedirectToAction("Index", "Home");
+                    
+                }
             }
         }
     }

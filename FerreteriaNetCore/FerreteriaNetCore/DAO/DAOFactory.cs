@@ -120,6 +120,15 @@ namespace FerreteriaNetCore.DAO
                 return userDAO;
             }
         }
+
+        public ProductDAO ProductDAO 
+        { 
+            get 
+            {
+                return new ProductDAO(this.session);
+            
+            }
+        }
         #endregion
     }
 }

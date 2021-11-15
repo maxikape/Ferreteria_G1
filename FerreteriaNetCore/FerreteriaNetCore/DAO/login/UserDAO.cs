@@ -54,5 +54,9 @@ namespace FerreteriaNetCore.DAO
 
             return null;
         }
+
+        public void SaveUser(UserModel user){
+            this.session.Save(user);
+        }
     }
 }

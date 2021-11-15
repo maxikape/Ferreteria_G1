@@ -3,6 +3,8 @@ using Microsoft.Extensions.Logging;
 using FerreteriaNetCore.DAO;
 using FerreteriaNetCore.Models.DTOs.RequestsDTO;
 using FerreteriaNetCore.Models.Entities;
+using FerreteriaNetCore.Models.DTOs.ResponseDTO;
+using Microsoft.AspNetCore.Http;
 
 namespace FerreteriaNetCore.Controllers
 {
@@ -16,7 +18,14 @@ namespace FerreteriaNetCore.Controllers
         }
 
         public IActionResult Index(){
-            return View("~/Views/Home/Signup.cshtml");
+            UserResponse userResponse = HttpContext.Session.Get<UserResponse>("UsuarioLogueado");
+            if (userResponse != null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else{
+                return View("~/Views/User/Signup.cshtml");
+            }
         }
 
         public IActionResult Signup(SignupDTO signupDTO)
@@ -25,8 +34,18 @@ namespace FerreteriaNetCore.Controllers
                 if(isValidUsername(daoFactory, signupDTO.Username) &&
                  !emailAlreadyUsed(daoFactory, signupDTO.Email) && 
                  passwordIsOk(signupDTO.Password, signupDTO.PasswordConfirmation)){
-                    //crear usuario
-                    //redirigir a signup comfirmed o ver como disparar una notificación de confirmación
+                    UserModel newUser = new UserModel();
+                    newUser.Id = 0;
+                    newUser.Username = signupDTO.Username;
+                    newUser.Password = signupDTO.Password;
+                    newUser.Email = signupDTO.Email;
+                    newUser.Birthdate = signupDTO.Bithdate;
+                    
+                    //TODO crear usuario
+                    daoFactory.BeginTrans();
+                    daoFactory.UserDAO.SaveUser(newUser);
+                    daoFactory.Commit();
+
                     return RedirectToAction("Index", "Home");
                 }
                 return RedirectToAction("Signup", "Signup");

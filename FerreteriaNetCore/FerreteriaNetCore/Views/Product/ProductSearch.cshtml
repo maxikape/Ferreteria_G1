@@ -1,4 +1,98 @@
 ﻿@{
+    Layout = "_Layout";
     ViewData["Title"] = "Product search";
 }
-<h1>@ViewData["Title"]</h1>
+
+<div class="row" id="tabla_productos">
+    <div class="col">
+        <table 
+            class="table table-striped table-borderer" 
+            id="grilla_productos" 
+            style="100%">
+            
+            <thead>
+                <tr class="text-center">
+                    <th scope="col">Producto</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Unidad medida</th>
+                    <th scope="col">Precio compra</th>
+                    <th scope="col">Precio venta</th>
+                    <th scope="col">Ganancia</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        var columnas = [{
+            "data": "descripcionProducto",
+            "sercheable": true,
+            "visible": true,
+            "orderable": true,
+            defaultContent: ""
+        }, {
+            "data": "cantidad",
+            "sercheable": true,
+            "visible": true,
+            "orderable": true,
+            defaultContent: ""
+        }, {
+            "data": "descripcionUnidadMedida",
+            "sercheable": true,
+            "visible": true,
+            "orderable": true,
+            defaultContent: ""
+        }, {
+            "data": "precioCompra",
+            "sercheable": false,
+            "visible": true,
+            "orderable": false,
+            defaultContent: ""
+        }, {
+            "data": "precioVenta",
+            "sercheable": false,
+            "visible": true,
+            "orderable": false,
+            defaultContent: ""
+        }, {
+            "data": "porcentajeGanancia",
+            "sercheable": true,
+            "visible": true,
+            "orderable": true,
+            defaultContent: ""
+        }, {
+            "data": function(row, type, set){
+                let s = `<div>`;
+                s +=   `<button id='simular_${row.id}' 
+                                type='button' 
+                                class='btn btn-sm btn-secondary mr-1' 
+                                onclick='abrirSimulador("${row.id}")'>
+                            <svg class="c-icon">
+                                <use xlink: 
+                                    href="${urlContent}img/icons/svg/free.svg#cil-data-transfer-down">
+                                </use>
+                            </svg>
+                        </button>`;
+                s += `</div>`;
+                return s;
+            },
+            "sercheable": false,
+            "visible": true,
+            "orderable": false
+        }];
+
+        crearGrilla(
+            "#grilla_productos", 
+            "Producto/ListarProductosPaginado", 
+            "Producto", 
+            columnas, 
+            null, 
+            true);
+    });
+</script>
