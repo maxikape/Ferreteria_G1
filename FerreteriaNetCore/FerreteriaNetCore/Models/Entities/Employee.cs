@@ -2,19 +2,19 @@
 {
     public class EmployeeModel
     {
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
 
-        public string Name { get; set; }
+        public virtual string Name { get; set; }
 
-        public string Surname { get; set; }
+        public virtual string Surname { get; set; }
 
-        public string File { get; set; }
+        public virtual string File { get; set; }
 
-        public string Category { get; set; }
+        public virtual string Category { get; set; }
 
-        public string DniNumber { get; set; }
+        public virtual string DniNumber { get; set; }
 
-        public string DniType { get; set; }
+        public virtual string DniType { get; set; }
         
     }
 }

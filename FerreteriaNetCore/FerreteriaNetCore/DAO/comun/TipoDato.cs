@@ -1,4 +1,4 @@
-namespace ejemplo.dao.comun
+namespace FerreteriaNetCore.DAO.comun
 {
     public enum TipoDato
     {

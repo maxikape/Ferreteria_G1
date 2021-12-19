@@ -4,7 +4,7 @@ using NHibernate;
 using NHibernate.Criterion;
 using NHibernate.SqlCommand;
 
-namespace ejemplo.dao.comun
+namespace FerreteriaNetCore.DAO.comun
 {
     public class UtilidadesNHibernate
     {

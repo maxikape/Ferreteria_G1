@@ -2,17 +2,18 @@
 {
     public class ProductModel
     {
-        public string Name { get; set; }
+        public virtual long Id {get; set; }
+        public virtual string Name { get; set; }
 
-        public string Brand { get; set; }
+        public virtual string Brand { get; set; }
 
-        public string Category { get; set; }
+        public virtual string Category { get; set; }
 
-        public string Description { get; set; }
+        public virtual string Description { get; set; }
 
-        public int Quantity { get; set; }
+        public virtual int Quantity { get; set; }
 
-        public void updateQuantity(int quantity)
+        public virtual void updateQuantity(int quantity)
         {
             this.Quantity = this.Quantity + quantity;
 

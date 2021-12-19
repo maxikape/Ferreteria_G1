@@ -12,13 +12,11 @@
             
             <thead>
                 <tr class="text-center">
-                    <th scope="col">Producto</th>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Unidad medida</th>
-                    <th scope="col">Precio compra</th>
-                    <th scope="col">Precio venta</th>
-                    <th scope="col">Ganancia</th>
-                    <th scope="col">Acciones</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Categoría</th>
+                    <th scope="col">Stock disponible</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,37 +29,32 @@
 <script>
     $(document).ready(function(){
         var columnas = [{
-            "data": "descripcionProducto",
+            //Todo emma: ver los attr de producto como se mapean
+            "data": "name",
             "sercheable": true,
             "visible": true,
             "orderable": true,
             defaultContent: ""
         }, {
-            "data": "cantidad",
+            "data": "brand",
             "sercheable": true,
             "visible": true,
             "orderable": true,
             defaultContent: ""
         }, {
-            "data": "descripcionUnidadMedida",
+            "data": "description",
             "sercheable": true,
             "visible": true,
             "orderable": true,
             defaultContent: ""
         }, {
-            "data": "precioCompra",
-            "sercheable": false,
+            "data": "category",
+            "sercheable": true,
             "visible": true,
-            "orderable": false,
+            "orderable": true,
             defaultContent: ""
         }, {
-            "data": "precioVenta",
-            "sercheable": false,
-            "visible": true,
-            "orderable": false,
-            defaultContent: ""
-        }, {
-            "data": "porcentajeGanancia",
+            "data": "quantity",
             "sercheable": true,
             "visible": true,
             "orderable": true,
@@ -89,7 +82,7 @@
 
         crearGrilla(
             "#grilla_productos", 
-            "Producto/ListarProductosPaginado", 
+            "Product/ListarProductosPaginado", 
             "Producto", 
             columnas, 
             null, 

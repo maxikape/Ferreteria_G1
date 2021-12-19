@@ -1,7 +1,7 @@
 using NHibernate;
 using NHibernate.Criterion;
 using System.Collections.Generic;
-
+using FerreteriaNetCore.DAO.comun;
 using FerreteriaNetCore.Models.Entities;
 
 namespace FerreteriaNetCore.DAO
@@ -13,6 +13,33 @@ namespace FerreteriaNetCore.DAO
         public ProductDAO(ISession session)
         {
             this.session = session;
+        }
+
+        public IList<ProductModel> GetProducts(
+            List<AtributoBusqueda> atributosBusqueda,
+            string query,
+            Paginado paginado,
+            Ordenamiento ordenamiento,
+            List<Asociacion> asociaciones,
+            out long cantidadTotal)
+        {
+            ICriteria lista = this.session.CreateCriteria<ProductModel>("ProductModel");
+            ICriteria cantidad = this.session.CreateCriteria<ProductModel>("ProductModel");
+
+            UtilidadesNHibernate.CrearAsociaciones(asociaciones, lista);
+            UtilidadesNHibernate.CrearAsociaciones(asociaciones, cantidad);
+
+            UtilidadesNHibernate.AgregarCriteriosDeBusqueda(atributosBusqueda, query, lista);
+            UtilidadesNHibernate.AgregarCriteriosDeBusqueda(atributosBusqueda, query, cantidad);
+            
+            UtilidadesNHibernate.AgregarOrdenamiento(ordenamiento, lista);
+            UtilidadesNHibernate.AgregarPaginado(paginado, lista);
+            
+            cantidadTotal = UtilidadesNHibernate.ObtenerCantidad(cantidad);
+
+            IList<ProductModel> productos = lista.List<ProductModel>();
+
+            return productos;
         }
 
         public ProductModel GetProduct(string name, string brand)
