@@ -25,14 +25,14 @@ DROP TABLE IF EXISTS `productmodel`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `productmodel` (
-  `Id` bigint NOT NULL,
+  `Id` bigint NOT NULL AUTO_INCREMENT,
   `Name` varchar(45) NOT NULL,
   `Brand` varchar(45) NOT NULL,
   `Category` varchar(45) NOT NULL,
-  `productmodelcol` varchar(200) NOT NULL,
+  `Description` varchar(200) NOT NULL,
   `Quantity` int NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,6 +41,7 @@ CREATE TABLE `productmodel` (
 
 LOCK TABLES `productmodel` WRITE;
 /*!40000 ALTER TABLE `productmodel` DISABLE KEYS */;
+INSERT INTO `productmodel` VALUES (1,'a','s','d','f',1),(2,'martillo','dewalt','electrica','asd',4),(3,'martillo','bosch','electrica','asd',4),(4,'martillo','pepito','electrica','asd',4),(5,'martillo','holi','electrica','asd',4),(6,'a','a','a','a',100),(7,'d','d','d','d',1),(8,'s','s','s','s',5);
 /*!40000 ALTER TABLE `productmodel` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -80,4 +81,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-19 15:11:57
+-- Dump completed on 2021-12-19 19:40:01

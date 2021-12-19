@@ -4,6 +4,8 @@ namespace FerreteriaNetCore.Models.DTOs
 {
     public class ProductEditDTO
     {
+        public long Id { get; set; }
+
         public string ProductName { get; set; }
 
         public string Brand { get; set; }

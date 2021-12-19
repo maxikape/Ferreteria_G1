@@ -27,6 +27,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using FerreteriaNetCore.Models.DTOs;
+using FerreteriaNetCore.Models;
 
 namespace FerreteriaNetCore.Controllers
 {
@@ -49,33 +50,59 @@ namespace FerreteriaNetCore.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
+        public IActionResult New()
+        {
+            UserResponse userResponse = HttpContext.Session.Get<UserResponse>("UsuarioLogueado");
+            if (userResponse == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            ProductViewModel productViewModel = new ProductViewModel
+            {
+                Id = 0,
+                Brand = "",
+                Category = "",
+                Description = "",
+                Name = "",
+                Quantity = 1
+            };
+            return View("~/Views/Product/ProductEdit.cshtml", productViewModel);
+
+        }
 
         public IActionResult SaveProduct(ProductEditDTO productDto)
         {
+
             using(DAOFactory daoFactory = new DAOFactory()){
 
-                IProductBO newProduct = new ProductBO();
-                newProduct = newProduct.buildNewProduct(productDto);
-
-                if(newProduct.applies()){
-                    ProductModel existingProduct = daoFactory.ProductDAO.GetProduct(newProduct.Name, newProduct.Brand);
-                    if (existingProduct != null)
-                    {
-                        newProduct.updateQuantity(existingProduct);
-
-                        daoFactory.BeginTrans();
-                        daoFactory.ProductDAO.SaveProduct(existingProduct); 
-                        daoFactory.Commit();
-
-                    }else{
-
-                        daoFactory.BeginTrans();
-                        daoFactory.ProductDAO.SaveProduct(newProduct);
-                        daoFactory.Commit();
-                    }
-                }
                 
-                return RedirectToAction("Index", "Product");
+                ProductModel productModel = daoFactory.ProductDAO.GetProduct(productDto.Id);
+                if (productModel == null)
+                {
+                    productModel =new ProductModel();
+                }
+                productModel.Brand = productDto.Brand;
+                productModel.Category = productDto.Category;
+                productModel.Description = productDto.Description;
+                productModel.Name = productDto.ProductName;
+
+                if (productDto.Id == 0 )
+                {
+                    productModel.Quantity = productDto.Quantity;
+                }
+                else
+                {
+                    productModel.Quantity += productDto.Quantity;
+                }
+
+
+                daoFactory.BeginTrans();
+                daoFactory.ProductDAO.SaveProduct(productModel); 
+                daoFactory.Commit();
+
+                
+                
+                return RedirectToAction("Search", "Home");
             }
         }
         public JsonResult ListarProductosPaginado(ModeloConsultaGrilla modeloConsulta)
@@ -117,6 +144,7 @@ namespace FerreteriaNetCore.Controllers
                     {
                         productosResponse.Add(new PsearchDTO
                         {
+                            Id = producto.Id,
                             Name = producto.Name,
                             Brand = producto.Brand,                            
                             Description = producto.Description,
@@ -207,6 +235,37 @@ namespace FerreteriaNetCore.Controllers
 
             return ordenamiento;
         }
+
+
+        public ActionResult Edit(long id)
+        {
+            UserResponse userResponse = HttpContext.Session.Get<UserResponse>("UsuarioLogueado");
+            if (userResponse == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            using (DAOFactory df = new DAOFactory())
+            {
+                ProductModel productModel = df.ProductDAO.GetProduct(id);
+                ProductViewModel productViewModel = new ProductViewModel
+                {
+                    Id = productModel.Id,
+                    Brand = productModel.Brand,
+                    Category = productModel.Category,
+                    Description = productModel.Description,
+                    Name = productModel.Name,
+                    Quantity = productModel.Quantity
+                };
+                return View("~/Views/Product/ProductEdit.cshtml", productViewModel);
+            }
+              
+
+        }
+
+
+
+
 
     }
 }
