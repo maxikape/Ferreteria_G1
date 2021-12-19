@@ -17,6 +17,7 @@
                     <th scope="col">Descripción</th>
                     <th scope="col">Categoría</th>
                     <th scope="col">Stock disponible</th>
+                    <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -66,11 +67,7 @@
                                 type='button' 
                                 class='btn btn-sm btn-secondary mr-1' 
                                 onclick='abrirSimulador("${row.id}")'>
-                            <svg class="c-icon">
-                                <use xlink: 
-                                    href="${urlContent}img/icons/svg/free.svg#cil-data-transfer-down">
-                                </use>
-                            </svg>
+                                Editar
                         </button>`;
                 s += `</div>`;
                 return s;
